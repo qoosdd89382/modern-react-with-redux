@@ -20,7 +20,9 @@ const AlbumsList = ({ user }) => {
         content = <div>Error fetching albums.</div>;
     } else {
         content = data.map(album => {
-            return <AlbumListItem key={album.id} album={album} />
+            return <AlbumListItem key={album.id} 
+                album={album} user={user}
+            />
         });
     }
 
