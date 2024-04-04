@@ -15,9 +15,9 @@ const AlbumsList = ({ user }) => {
 
     let content;
     if (isLoading) {
-        content = <Skeleton />
+        content = <Skeleton className="h-10 w-full" times={3} />;
     } else if (error) {
-        content = <div>Error fetching albums.</div>
+        content = <div>Error fetching albums.</div>;
     } else {
         content = data.map(album => {
             const header = <div>{album.title}</div>;

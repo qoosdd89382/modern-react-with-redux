@@ -6,13 +6,24 @@ import {
 } from '@reduxjs/toolkit/query/react';
 import { faker } from '@faker-js/faker';
 
+// 以下為 DEV ONLY!!!
+const pause = (duration) => {
+    return new Promise((resolve) => {
+        setTimeout(resolve, duration);
+    });
+}
+
 // 會自己幫我們 generate slice
 const albumsApi = createApi({
     // 存在 BIG STATE 當中的 a piece of state 名稱
     // 像 usersSlice 就是 'users'
     reducerPath: 'albums',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:3005'
+        baseUrl: 'http://localhost:3005',
+        fetchFn: async (...args) => {
+            await pause(1000);
+            return fetch(...args);
+        }
     }),
     // 說明如何 fetch
     endpoints(builder) {
