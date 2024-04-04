@@ -1,10 +1,10 @@
-import { 
-    createApi, 
+import {
+    createApi,
     // 底層是 fetch, 會回給我們一個定義好的 fetch function, 
     // 所以比較像是一個 configurate 的方法
     fetchBaseQuery
- } from '@reduxjs/toolkit/query/react';
- import { faker } from '@faker-js/faker';
+} from '@reduxjs/toolkit/query/react';
+import { faker } from '@faker-js/faker';
 
 // 會自己幫我們 generate slice
 const albumsApi = createApi({
@@ -18,7 +18,9 @@ const albumsApi = createApi({
     endpoints(builder) {
         return {
             fetchAlbums: builder.query({
-                providesTags: ['Album'],    // 叫啥都可以, 但要 invalidate 它時要用一模一樣的字眼
+                providesTags: (result, error, arg) => {
+                    return [{ type: 'Album', id: arg.id }];
+                },
                 query: (user) => {
                     return {
                         url: '/albums',
@@ -30,7 +32,9 @@ const albumsApi = createApi({
                 }
             }),
             addAlbum: builder.mutation({
-                invalidatesTags: ['Album'],
+                invalidatesTags: (result, error, arg) => {
+                    return [{ type: 'Album', id: arg.id }];
+                },
                 query(user) {
                     return {
                         url: '/albums',
@@ -41,7 +45,7 @@ const albumsApi = createApi({
                         method: 'POST'
                     };
                 }
-            }), 
+            }),
         }
     }
 });
