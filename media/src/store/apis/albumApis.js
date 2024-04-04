@@ -4,6 +4,7 @@ import {
     // 所以比較像是一個 configurate 的方法
     fetchBaseQuery
  } from '@reduxjs/toolkit/query/react';
+ import { faker } from '@faker-js/faker';
 
 // 會自己幫我們 generate slice
 const albumsApi = createApi({
@@ -27,21 +28,21 @@ const albumsApi = createApi({
                     };
                 }
             }),
-            // createAlbum: builder.mutation({
-            //     mutation(user) {
-            //         return {
-            //             url: '/albums',
-            //             params: {
-            //                 userId: user.id,
-            //                 title: ''
-            //             },
-            //             method: 'POST'
-            //         };
-            //     }
-            // }),
+            addAlbum: builder.mutation({
+                query(user) {
+                    return {
+                        url: '/albums',
+                        body: {
+                            userId: user.id,
+                            title: faker.commerce.productName()
+                        },
+                        method: 'POST'
+                    };
+                }
+            }), 
         }
     }
 });
 
-export const { useFetchAlbumsQuery } = albumsApi;
+export const { useFetchAlbumsQuery, useAddAlbumMutation } = albumsApi;
 export { albumsApi };
