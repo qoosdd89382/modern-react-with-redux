@@ -7,7 +7,7 @@ const AlbumsList = ({ user }) => {
     const { data, error, isLoading } = useFetchAlbumsQuery(user);
     // isLoading 只會在第一次 fetch 的時候是 true, 有 response 或 error 時會是 false, 之後永遠不會再變成 true
     // isFetching 是每次
-    const [addAlbum, results] = useAddAlbumMutation();
+    const [addAlbum, { isLoading: isAdding }] = useAddAlbumMutation();
 
     const handleAddAlbum = () => {
         addAlbum(user);
@@ -31,10 +31,12 @@ const AlbumsList = ({ user }) => {
 
     return (
         <div>
-            <div>Albums for {user.name}</div>
-            <Button onClick={handleAddAlbum}>
-                + Add Album
-            </Button>
+            <div className="m-2 flex flex-row items-center justify-between">
+                <h3 className="text-lg font-bold">Albums for {user.name}</h3>
+                <Button onClick={handleAddAlbum} loading={isAdding}>
+                    + Add Album
+                </Button>
+            </div>
             <div>{content}</div>
         </div>
     );
