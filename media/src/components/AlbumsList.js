@@ -4,7 +4,7 @@ import Button from './Button';
 import AlbumListItem from './AlbumsListItem';
 
 const AlbumsList = ({ user }) => {
-    const { data, error, isLoading } = useFetchAlbumsQuery(user);
+    const { data, error, isFetching } = useFetchAlbumsQuery(user);
     // isLoading 只會在第一次 fetch 的時候是 true, 有 response 或 error 時會是 false, 之後永遠不會再變成 true
     // isFetching 是每次
     const [addAlbum, { isLoading: isAdding }] = useAddAlbumMutation();
@@ -14,7 +14,7 @@ const AlbumsList = ({ user }) => {
     };
 
     let content;
-    if (isLoading) {
+    if (isFetching) {
         content = <Skeleton className="h-10 w-full" times={3} />;
     } else if (error) {
         content = <div>Error fetching albums.</div>;

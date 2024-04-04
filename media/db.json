@@ -11,21 +11,6 @@
   ],
   "albums": [
     {
-      "id": "1c94",
-      "userId": "f7be",
-      "title": "Ergonomic Wooden Salad"
-    },
-    {
-      "id": "c874",
-      "userId": "f7be",
-      "title": "Gorgeous Rubber Car"
-    },
-    {
-      "id": "2f06",
-      "userId": "f7be",
-      "title": "Practical Fresh Computer"
-    },
-    {
       "id": "f34b",
       "userId": "f7be",
       "title": "Elegant Wooden Shoes"
@@ -69,6 +54,11 @@
       "id": "b653",
       "userId": "f7be",
       "title": "Luxurious Soft Keyboard"
+    },
+    {
+      "id": "6359",
+      "userId": "f7be",
+      "title": "Fantastic Bronze Chair"
     }
   ],
   "photos": []
