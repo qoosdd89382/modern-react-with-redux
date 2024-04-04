@@ -14,7 +14,7 @@ function UsersList() {
 
     useEffect(() => {
         doFetchUsers()
-    }, []);   // [dispatch] 
+    }, [doFetchUsers]);   // [dispatch] 
 
     const handleUserAdd = () => {
         doCreateUser();
