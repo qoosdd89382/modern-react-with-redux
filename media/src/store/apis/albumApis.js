@@ -18,6 +18,7 @@ const albumsApi = createApi({
     endpoints(builder) {
         return {
             fetchAlbums: builder.query({
+                providesTags: ['Album'],    // 叫啥都可以, 但要 invalidate 它時要用一模一樣的字眼
                 query: (user) => {
                     return {
                         url: '/albums',
@@ -29,6 +30,7 @@ const albumsApi = createApi({
                 }
             }),
             addAlbum: builder.mutation({
+                invalidatesTags: ['Album'],
                 query(user) {
                     return {
                         url: '/albums',

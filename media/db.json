@@ -3,18 +3,42 @@
     {
       "id": "f7be",
       "name": "Phyllis McLaughlin"
+    },
+    {
+      "id": "75c5",
+      "name": "Danny Pacocha"
     }
   ],
   "albums": [
     {
-      "id": "wqeqwe",
-      "title": "AAAAAAAA",
-      "userId": "f7be"
+      "id": "4d3a",
+      "userId": "f7be",
+      "title": "Luxurious Granite Chair"
     },
     {
-      "id": "56c9",
+      "id": "3c5a",
       "userId": "f7be",
-      "title": "Sleek Cotton Keyboard"
+      "title": "Oriental Cotton Gloves"
+    },
+    {
+      "id": "ef8c",
+      "userId": "f7be",
+      "title": "Fantastic Rubber Fish"
+    },
+    {
+      "id": "1c94",
+      "userId": "f7be",
+      "title": "Ergonomic Wooden Salad"
+    },
+    {
+      "id": "c874",
+      "userId": "f7be",
+      "title": "Gorgeous Rubber Car"
+    },
+    {
+      "id": "2f06",
+      "userId": "f7be",
+      "title": "Practical Fresh Computer"
     }
   ],
   "photos": []
