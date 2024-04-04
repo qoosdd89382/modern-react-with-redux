@@ -5,6 +5,12 @@
       "name": "Phyllis McLaughlin"
     }
   ],
-  "albums": [],
+  "albums": [
+    {
+      "id": "wqeqwe",
+      "title": "AAAAAAAA",
+      "userId": "f7be"
+    }
+  ],
   "photos": []
 }
